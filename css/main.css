@@ -4,6 +4,8 @@
     --serif: 'Italiana', serif;
     --wine: #904951;
     --rose: #BA8187;
+    --lt-rose: #f1d3d6;
+    --xlt-rose: #f0dcde;
     --white: #fff;
     scroll-behavior: smooth;
 }
@@ -12,6 +14,7 @@ body {
     font-family: var(--sans-serif);
     color: var(--wine);
     overflow-x: hidden;
+    margin: 0 auto;
 }
 
 .container {
@@ -31,7 +34,7 @@ body {
 
 /* Typography */
 h1, h2, h3 { color: var(--rose); }
-a { color: var(--rose); }
+a { color: var(--rose); text-decoration: none; }
 
 /* Mobile */
 @media screen and (min-width: 0px) {
@@ -59,6 +62,10 @@ a { color: var(--rose); }
     }
 
     /* Typography */
+    h1, h2, h3, a {
+        -webkit-text-stroke: 0.04rem;
+    }
+    
     h1, h2, h3 {
         font-family: var(--serif);
         letter-spacing: 0.05rem;
@@ -68,13 +75,13 @@ a { color: var(--rose); }
         font-size: 1.44rem; 
         line-height: 1.69rem;
         margin-bottom: 1.25rem;
+        font-variant: small-caps;
     }
 
     h3 { 
         font-size: 1.06rem; 
         line-height: 1.25rem;
         margin-bottom: 0.50rem;
-        -webkit-text-stroke: 0.00625rem;
     }
 
     a {
@@ -86,7 +93,7 @@ a { color: var(--rose); }
 
     /* Header */
     .site-header {
-        width: 100vw;
+        /* width: 100vw; */
         height: 4.75rem;
     }
 
@@ -108,6 +115,7 @@ a { color: var(--rose); }
     .site-header ul.flex {
         flex-direction: column;
         justify-content: space-around;
+        gap: 2rem;
     }
 
     .site-header ul li {
@@ -117,6 +125,8 @@ a { color: var(--rose); }
     .site-header ul li img {
         width: 4.8rem;
         height: auto;
+        padding: 1rem;
+        margin-bottom: 4rem;
     }
 
     .site-header__menu-icon a {
@@ -128,8 +138,8 @@ a { color: var(--rose); }
     .site-header__menu {
         position: absolute;
         background-color: rgb(254, 248, 248);
-        height: 100%;
-        width: 20rem;
+        height: 100vh;
+        width: 100vw;
         top: 0;
         right: 0;
         z-index: 1;
@@ -142,7 +152,6 @@ a { color: var(--rose); }
     }
 
     .site-header__menu a {
-        text-decoration: none;
         padding: 1rem;
     }
 
@@ -157,6 +166,11 @@ a { color: var(--rose); }
         font-size: 1.4rem;
         padding: 0.5rem;
         opacity: 0.5;
+    }
+
+    ion-icon[name="menu-outline"] {
+        font-size: 2rem;
+        transform: scale(1,1.1);
     }
 
     /* Footer */
@@ -210,30 +224,43 @@ a { color: var(--rose); }
         height: 100vh;
         background: url('../images/hero-img.jpg');
         background-size: cover;
-        background-position: top left 10%;
+        background-repeat: no-repeat;
+        background-position: top left 20%;
         position: relative;
         margin-bottom: 1.875rem;
     }
 
-    .home-banner .container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-    }
-
     .home-banner__text {
-        grid-column: 1 / span 3;
-        text-align: left;
+        margin-top: 35%;
+        grid-column: auto / span 4;
+        text-align: right;
+        padding-right: 0.5rem;
     }
 
     .home-banner__text p {
         font-family: var(--serif);
-        font-size: 1.44rem; 
-        line-height: 1.69rem;
-        letter-spacing: 0.05rem;
-        color: var(--rose);
-        -webkit-text-stroke: 0.02rem;
+        font-size: 2rem; 
+        line-height: 2.2rem;
+        letter-spacing: 0.15rem;
+        color: var(--wine);
+        font-variant: small-caps;
+        margin-bottom: 2rem;
+    }
+
+    .home-banner__text a {
+        font-size: 1.4rem;
+        font-variant: small-caps;
+        background-color: var(--white);
+        color: var(--wine);
+        border: none;
+        border-radius: 0.15rem;
+        padding: 0.8rem 1.8rem;
+        display: inline-block;
+        line-height: 1.75rem;
+    }
+
+    .home-banner__text a:hover {
+        background-color: var(--xlt-rose);
     }
 
     /* Intro */
@@ -324,9 +351,12 @@ a { color: var(--rose); }
     }
 
     /* Typography */
+    h1, h2, h3, a {
+        -webkit-text-stroke: 0.04rem;
+    }
+
     h1, h2, h3 {
         font-family: var(--serif);
-        -webkit-text-stroke: 0.0125rem;
     }
 
     h1, h2 { 
@@ -334,6 +364,7 @@ a { color: var(--rose); }
         line-height: 2.06rem;
         letter-spacing: 0.1rem;
         margin-bottom: 1.25rem;
+        font-variant: small-caps;
     }
 
     h3 {
@@ -361,8 +392,15 @@ a { color: var(--rose); }
     }
 
     /* Nav Menu */
-    .site-header ul li {
+    .site-header ul li:not(:first-child) {
         padding: 1.25rem;
+    }
+
+    .site-header ul li img {
+        width: 6.06rem;
+        height: auto;
+        /* padding: 1rem; */
+        margin-bottom: 1rem;
     }
 
     .site-header__menu {
@@ -425,25 +463,39 @@ a { color: var(--rose); }
         margin-bottom: 2.5rem;
     }
 
-    .home-banner .container {
+    /* .home-banner .container {
         position: absolute;
         top: 35%;
         left: 40%;
         height: 100%;
-    }
+    } */
 
     .home-banner__text {
-        grid-column: 4 / span 7;
+        margin-right: 1rem;
+        margin-top: 8rem;
         text-align: right;
+        grid-column: 5 / span 8;
     }
 
     .home-banner__text p {
         font-family: var(--serif);
-        font-size: 1.75rem; 
+        font-size: 2.5rem; 
         line-height: 2.06rem;
-        letter-spacing: 0.1rem;
-        color: var(--rose);
-        -webkit-text-stroke: 0.04rem;
+        letter-spacing: 0.15rem;
+    }
+
+    .home-banner__text a {
+        /* font-size: 1.4rem; */
+        background-color: var(--xlt-rose);
+        border: none;
+        border-radius: 0.15rem;
+        padding: 0.8rem 1.8rem;
+        line-height: 1.75rem;
+        display: inline-block;
+    }
+    
+    .home-banner__text a:hover {
+        background-color: var(--lt-rose);
     }
 
     /* Intro */
@@ -463,6 +515,12 @@ a { color: var(--rose); }
     /* Menu */
     .menu__title {
         grid-column: auto / span 12;
+        text-align: center;
+    }
+
+    .menu__title p {
+        padding-right: 6rem;
+        padding-left: 6rem;
     }
 
     .menu__content {
@@ -470,6 +528,11 @@ a { color: var(--rose); }
     }
 
     /* fslightbox Gallery */
+    .gallery__title {
+        grid-column: auto / span 12;
+        text-align: center;
+    }
+
     .gallery__image,
     .gallery__image img {
         margin-bottom: 0;
@@ -482,7 +545,7 @@ a { color: var(--rose); }
 
     /* Base */
     body {
-        font-size: 1.25rem;
+        font-size: 1.05rem;
         line-height: 1.88rem;
     }
 
@@ -499,7 +562,7 @@ a { color: var(--rose); }
     }
 
     /* Typography */
-    h1, h2, h3 {
+    h1, h2, h3, a, ul {
         font-family: var(--serif);
         -webkit-text-stroke: 0.04rem;
     }
@@ -509,6 +572,7 @@ a { color: var(--rose); }
         line-height: 3.53rem;
         letter-spacing: 0.1rem;
         margin-bottom: 1.88rem;
+        font-variant: small-caps;
     }
 
     h3 {
@@ -516,24 +580,13 @@ a { color: var(--rose); }
         line-height: 1.69rem;
         margin-bottom: 0.5rem;
         letter-spacing: 0.06rem;
-        -webkit-text-stroke: 0.04rem;
-    }
-
-    p {
-        font-size: 1.05rem;
     }
 
     a {
         text-decoration: none;
-        font-family: var(--serif);
-        font-size: 1.3rem; 
+        font-size: 1.1rem; 
         line-height: 1.75rem;
         margin-bottom: 0.5rem;
-        -webkit-text-stroke: 0.02rem;
-    }
-
-    ul {
-        -webkit-text-stroke: 0.04rem;
     }
 
     /* Header */
@@ -553,6 +606,7 @@ a { color: var(--rose); }
     /* Nav Menu */
     .site-header ul.flex {
         flex-direction: row;
+        gap: 2rem
     }
 
     .site-header__menu ul li {
@@ -569,6 +623,7 @@ a { color: var(--rose); }
         width: unset;
         height: unset;
         transform: unset !important;
+        transition: unset !important;
     }
 
     .site-header__menu a {
@@ -627,32 +682,40 @@ a { color: var(--rose); }
 
     /* Home Banner */
     .home-banner {
-        height: 32rem;
+        height: 60vh;
         background: url('../images/hero-img.jpg');
         background-size: cover;
-        background-position: left;
+        background-position: center;
         position: relative;
         margin-bottom: 3.4rem;
     }
 
-    .home-banner .container {
-        position: absolute;
-        top: 30%;
-        left: 40%;
-        height: 100%;
-    }
-
     .home-banner__text {
-        grid-column: 3 / span 7;
+        margin-right: 1rem;
+        margin-top: 6rem;
         text-align: right;
+        grid-column: 5 / span 8;
     }
 
     .home-banner__text p {
         font-family: var(--serif);
-        font-size: 2.5rem; 
-        line-height: 3.53rem;
-        letter-spacing: 0.1rem;
-        color: var(--rose);
+        font-size: 2.8rem; 
+        letter-spacing: 0.15rem;
+        margin-bottom: 2.5rem;
+        color: var(--wine);
+    }
+
+    .home-banner__text a {
+        font-size: 1.4rem;
+        background-color: var(--xlt-rose);
+        border: none;
+        border-radius: 0.15rem;
+        padding: 0.8rem 1.8rem;
+        display: inline-block;
+    }
+
+    .home-banner__text a:hover {
+        background-color: var(--lt-rose);
     }
 
     /* Intro */
@@ -671,7 +734,13 @@ a { color: var(--rose); }
     }
 
     .menu__content p {
-        line-height: 1.63rem;
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+
+    .menu__title p {
+        margin: 0 auto;
+        max-width: 42rem;
     }
 
     .menu__content:first-child {
