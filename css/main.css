@@ -319,6 +319,10 @@ a { color: var(--rose); text-decoration: none; }
         vertical-align: top;
     }
 
+    .gallery__image img:hover {
+        opacity: 0.7;
+    }
+
     .gallery__image:last-child {
         margin-bottom: 0;
     }
