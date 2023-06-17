@@ -63,7 +63,7 @@ a { color: var(--rose); text-decoration: none; }
 
     /* Typography */
     h1, h2, h3, a {
-        -webkit-text-stroke: 0.04rem;
+        -webkit-text-stroke: 0.06rem;
     }
     
     h1, h2, h3 {
@@ -194,6 +194,7 @@ a { color: var(--rose); text-decoration: none; }
         font-size: 1rem;
         line-height: 1.25rem;
         letter-spacing: 0.06rem;
+        -webkit-text-stroke: 0.04rem;
     }
 
     .site-footer__text ul li:last-child {
@@ -249,6 +250,7 @@ a { color: var(--rose); text-decoration: none; }
         color: var(--rose);
         font-variant: small-caps;
         margin-bottom: 2rem;
+        -webkit-text-stroke: 0.04rem;
     }
 
     .home-banner__text a {
@@ -261,6 +263,7 @@ a { color: var(--rose); text-decoration: none; }
         padding: 0.8rem 1.8rem;
         display: inline-block;
         line-height: 1.75rem;
+        -webkit-text-stroke: 0.04rem;
     }
 
     .home-banner__text a:hover {
@@ -349,7 +352,7 @@ a { color: var(--rose); text-decoration: none; }
     }
 
     /* Typography */
-    h1, h2, h3, a {
+    h1, h2, h3, a, ul {
         -webkit-text-stroke: 0.04rem;
     }
 
