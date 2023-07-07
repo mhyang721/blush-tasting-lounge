@@ -155,6 +155,10 @@ a { color: var(--rose); text-decoration: none; }
         padding: 1rem;
     }
 
+    .site-header__menu a:hover {
+        color: var(--wine);
+    }
+
     .site-header__close {
         position: absolute;
         z-index: 2;
