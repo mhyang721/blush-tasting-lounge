@@ -788,3 +788,15 @@ when resizing from desktop to tablet */
     }
     
 }
+
+/* XL Desktop */
+@media screen and (min-width: 1920px) {
+
+    /* Base */
+    .container {
+        max-width: 74rem;
+        margin: 0 auto;
+        padding: 4rem 0;
+    }
+
+}
